@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+option java_package = "com.rileybrewer.brewalliance.proto";
+option java_multiple_files = true;
+
+message Event {
+  string key = 1;
+  string name = 2;
+  string city = 3;
+  string state_prov = 4;
+  string start_date = 5;
+  repeated Match matches = 6;
+  map<string, string> thumbnails = 7;
+}
+
+message DistrictEvents {
+  repeated Event events = 1;
+}
+
+message Match {
+  string key = 1;
+  CompLevel comp_level = 2;
+  int32 match_number = 3;
+  int32 set_number = 4;
+  repeated Team blue_alliance = 5;
+  repeated Team red_alliance = 6;
+}
+
+//'qm', 'ef', 'qf', 'sf', 'f'
+enum CompLevel {
+  QUALIFICATION = 0;
+  QUARTER_FINAL = 1;
+  SEMI_FINAL = 2;
+  FINAL = 3;
+  EIGHT_FINAL = 4;
+}
+
+message Team {
+  string key = 1;
+  string city = 2;
+  string state_prov = 3;
+  int32 team_number = 4;
+  string nickname = 5;
+  string image = 6;
+}

@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+option java_package = "com.rileybrewer.brewalliance.proto";
+option java_multiple_files = true;
+
+message Reports {
+  map<string, Report> reports = 1;
+  map<string, Report> archived = 2;
+}
+
+message Report {
+  string key = 1;
+  string match_key = 2;
+  string team_key = 3;
+  string scout_key = 4;
+  string device_key = 5;
+  string time_start = 6;
+  Autonomous auto = 7;
+  Teleop tele = 8;
+  EndGame end_game = 9;
+}
+
+message Autonomous {
+  bool pre_load = 1;
+  bool leave = 2;
+  int32 collect = 3;
+  int32 score_speaker = 4;
+  int32 score_amp = 5;
+}
+
+message Teleop {
+  int32 collect = 1;
+  int32 score_speaker = 2;
+  int32 score_amp = 3;
+}
+
+message EndGame {
+  bool park = 1;
+  Climb climb = 2;
+  int32 trap = 3;
+}
+
+enum Climb {
+  NONE = 0;
+  SINGLE = 1;
+  DOUBLE = 2;
+  TRIPLE = 3;
+}

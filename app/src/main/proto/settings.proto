@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option java_package = "com.rileybrewer.brewalliance.proto";
+option java_multiple_files = true;
+
+message Settings {
+  string device_key = 1;
+  string scout_key = 2;
+}

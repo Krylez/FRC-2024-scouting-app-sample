@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">BrewAlliance</string>
+
+    <string name="screen_home">Home</string>
+    <string name="screen_events">Events</string>
+    <string name="screen_matches">Matches</string>
+    <string name="screen_saved_reports">Saved Reports</string>
+    <string name="screen_teams">Teams</string>
+    <string name="screen_new_report">New Report</string>
+    <string name="screen_import_report">Import Report</string>
+    <string name="screen_settings">Settings</string>
+</resources>
